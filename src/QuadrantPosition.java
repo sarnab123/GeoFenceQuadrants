@@ -40,6 +40,11 @@ public class QuadrantPosition {
 		
 	}
 
+	/**
+	 * 
+	 * Read list of store from a flat file.
+	 * @return
+	 */
 	private static List<Store> readStores() {
 		JSONParser parser = new JSONParser();
 		List<Store> stores = new ArrayList<>();
@@ -73,6 +78,10 @@ public class QuadrantPosition {
 		return stores;
 	}
 
+	/**
+	 * Divide USA into quadrants based on a threshold distance.
+	 * @return
+	 */
 	private static List<Quadrants> computeQuadrants() {
 
 		// This location is left most top corner of USA.
@@ -150,6 +159,10 @@ public class QuadrantPosition {
 		return computedQuads;
 	}
 
+	/**
+	 * @param store
+	 * @param computedQuads
+	 */
 	private static void findPositionOfStore(Store store,
 			List<Quadrants> computedQuads) {
 		for(Quadrants quad:computedQuads)

@@ -1,0 +1,34 @@
+{
+"stores":
+[
+{ "_id" : "56774e86672869c2b1e8dd3f", "name" : "Milpitas", "state" : "california", "latitude" : 43.0561296, "longitude" : -88.1785267 },
+{ "_id" : "56775043818ccfba4d8a968d", "longitude" : -88.3252587, "latitude" : 43.0296279, "state" : "wisconsin", "name" : "waukesa", "__v" : 0 },
+{ "_id" : "567849ffacf2badb1c823896", "longitude" : -88.3252587, "latitude" : 43.029627923, "state" : "wisconsin", "name" : "waukesa1", "__v" : 0 },
+{ "_id" : "56784a4cacf2badb1c823897", "longitude" : -88.3252587, "latitude" : 43.029627923, "state" : "wisconsin", "name" : "waukesa1", "__v" : 0 },
+{ "_id" : "56784f76acf2badb1c823898", "longitude" : -88.3252587, "latitude" : 43.02962793413, "state" : "wisconsin", "name" : "waukesa2", "__v" : 0 },
+{ "_id" : "567ae20bacf2badb1c823899", "longitude" : -88.3252587, "latitude" : 43.0296279, "state" : "wisconsin", "name" : "waukesa3", "__v" : 0 },
+{ "_id" : "5680a6f94bae7bbe07cf68a4", "longitude" : -88.3252587, "latitude" : 43.02962793413, "state" : "wisconsin", "name" : "waukesa5", "__v" : 0 },
+{ "_id" : "568197192ce06515a72dda6b", "longitude" : -88.3252587, "latitude" : 43.02962793413, "state" : "wisconsin", "name" : "waukesa5", "__v" : 0 },
+{ "_id" : "5681982a2ce06515a72dda6c", "longitude" : -121.178688, "latitude" : 43.02962793413, "state" : "wisconsin", "name" : "waukesa5", "__v" : 0 },
+{ "_id" : "568198762ce06515a72dda6d", "longitude" : -88.178688, "latitude" : 41.056271, "state" : "wisconsin", "name" : "san jose", "__v" : 0 },
+{ "_id" : "56819c232ce06515a72dda6e", "longitude" : -121.903393, "latitude" : 37.4136773, "state" : "california", "name" : "milpitas", "__v" : 0 },
+{ "_id" : "56819c502ce06515a72dda6f", "longitude" : -121.9691831, "latitude" : 37.5037444, "state" : "california", "name" : "fremont", "__v" : 0 },
+{ "_id" : "56819c822ce06515a72dda70", "longitude" : -122.0001011, "latitude" : 37.3503548, "state" : "california", "name" : "santa clara", "__v" : 0 },
+{ "_id" : "56819cab2ce06515a72dda71", "longitude" : -121.8523012, "latitude" : 37.3669091, "state" : "california", "name" : "san jose east", "__v" : 0 },
+{ "_id" : "56819d1b2ce06515a72dda72", "longitude" : -88.2033737, "latitude" : 43.1908836, "state" : "wisconsin", "name" : "menonomee falls", "__v" : 0 },
+{ "_id" : "56819d462ce06515a72dda73", "longitude" : -88.3180087, "latitude" : 43.1373782, "state" : "wisconsin", "name" : "sussex", "__v" : 0 },
+{ "_id" : "56819e0a2ce06515a72dda74", "longitude" : -88.1384416, "latitude" : 43.0615396, "state" : "wisconsin", "name" : "brookfield", "__v" : 0 },
+{ "_id" : "56819e372ce06515a72dda75", "longitude" : -68.213123, "latitude" : 35.1820232, "state" : "new york", "name" : "new york", "__v" : 0 },
+{ "_id" : "56819e842ce06515a72dda76", "longitude" : -63.999116, "latitude" : 26.044322, "state" : "Clewiston", "name" : "Clewiston", "__v" : 0 },
+{ "_id" : "56819eb72ce06515a72dda77", "longitude" : -88.2579823, "latitude" : 43.0295188, "state" : "wisconsin", "name" : "waukesha1", "__v" : 0 },
+{ "_id" : "56819eda2ce06515a72dda78", "longitude" : -89.2044019, "latitude" : 41.798136, "state" : "wisconsin", "name" : "Crete", "__v" : 0 },
+{ "_id" : "56819f082ce06515a72dda79", "longitude" : -88.1762299, "latitude" : 42.9215037, "state" : "wisconsin", "name" : "muskego", "__v" : 0 },
+{ "_id" : "56819f382ce06515a72dda7a", "longitude" : -106.6517555, "latitude" : 42.0005446, "state" : "wisconsin", "name" : "Chennyen", "__v" : 0 },
+{ "_id" : "56819f602ce06515a72dda7b", "longitude" : -88.1199781, "latitude" : 42.9975829, "state" : "wisconsin", "name" : "west allis", "__v" : 0 },
+{ "_id" : "56819f962ce06515a72dda7c", "longitude" : -88.0738859, "latitude" : 42.9487286, "state" : "wisconsin", "name" : "greendale", "__v" : 0 },
+{ "_id" : "56819fbb2ce06515a72dda7d", "longitude" : -88.1858931, "latitude" : 43.1244655, "state" : "wisconsin", "name" : "kic", "__v" : 0 },
+{ "_id" : "5681a0462ce06515a72dda7e", "longitude" : -88.1858931, "latitude" : 43.1244655, "state" : "wisconsin", "name" : "kic", "__v" : 0 },
+{ "_id" : "5681a07f2ce06515a72dda7f", "longitude" : -88.192713, "latitude" : 43.1232646, "state" : "wisconsin", "name" : "kohls head office", "__v" : 0 },
+{ "_id" : "5681a0ae2ce06515a72dda80", "longitude" : -121.9227375, "latitude" : 37.4357975, "state" : "california", "name" : "kohls milpitas", "__v" : 0 }
+]
+}
