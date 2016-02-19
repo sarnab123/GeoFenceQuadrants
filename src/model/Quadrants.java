@@ -1,9 +1,13 @@
 package model;
 
+import java.util.List;
+
 public class Quadrants {
 	
 	Location leftTopLocation;
 	Location rightBottomLocation;
+	
+	List<Store> listOfStores;
 	
 	public void setData(Location leftTopLocation,Location rightBottomLocation)
 	{
@@ -16,7 +20,17 @@ public class Quadrants {
 		return this.leftTopLocation;
 	}
 	
-	public Location rightBottomLocation()
+	public void setStores(List<Store> stores)
+	{
+		this.listOfStores = stores;
+	}
+	
+	public List<Store> getStores()
+	{
+		return this.listOfStores;
+	}
+	
+	public Location getRightBottomLocation()
 	{
 		return this.rightBottomLocation;
 	}

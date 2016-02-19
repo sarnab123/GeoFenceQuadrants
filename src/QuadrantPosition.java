@@ -1,9 +1,14 @@
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
 import model.Location;
 import model.Quadrants;
 import model.Store;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
 /**
  * 
@@ -30,8 +35,42 @@ public class QuadrantPosition {
 
 	public static void main(String[] args) {
 		List<Quadrants> computedQuads = computeQuadrants();
+		List<Store> stores = readStores();
+		computedQuads = bucketStoresIntoQuadrants(stores, computedQuads);
+		
+	}
+
+	private static List<Store> readStores() {
+		JSONParser parser = new JSONParser();
 		List<Store> stores = new ArrayList<>();
-		bucketStoresIntoQuadrants(stores, computedQuads);
+
+		try {
+
+			Object obj = parser.parse(new FileReader(
+					"./properties/stores.txt"));
+
+			JSONObject jsonObject = (JSONObject) obj;
+
+			JSONArray storeList = (JSONArray) jsonObject.get("stores");
+			
+
+			for(Object data:storeList)
+			{
+				JSONObject storeData = (JSONObject)data;
+				System.out.println("Data = "+storeData);
+				Store store = new Store();
+				String storeName = (String)storeData.get("name");
+				Location storeLocation = new Location((Double)storeData.get("latitude"), 
+						(Double)storeData.get("longitude"));
+				store.setData(storeName, storeLocation);
+				stores.add(store);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return stores;
 	}
 
 	private static List<Quadrants> computeQuadrants() {
@@ -55,7 +94,8 @@ public class QuadrantPosition {
 
 			// First Calculate horizontal lat lon of the thresholdHorDistance
 			// from the left lat lon
-			Location newCalculatedHorLoc = getNewValue(90,thresholdHorDistance, startTopLeftLocation.getLatitude(),
+			Location newCalculatedHorLoc = getNewValue(90,
+					thresholdHorDistance, startTopLeftLocation.getLatitude(),
 					startTopLeftLocation.getLongitude());
 
 			// Then Calculate the vertical lat lon of the newly calculated
@@ -63,7 +103,8 @@ public class QuadrantPosition {
 			// vertical distance.
 			Location newCalculatedVerLoc = null;
 			if (null != newCalculatedHorLoc) {
-				newCalculatedVerLoc = getNewValue(180, totalVerDistance,newCalculatedHorLoc.getLatitude(),
+				newCalculatedVerLoc = getNewValue(180, totalVerDistance,
+						newCalculatedHorLoc.getLatitude(),
 						newCalculatedHorLoc.getLongitude());
 			}
 
@@ -71,6 +112,8 @@ public class QuadrantPosition {
 				// Hence a quadrant will comprise of the top left location and
 				// bottom right location.
 				quadrant.setData(startTopLeftLocation, newCalculatedVerLoc);
+				List<Store> storeList = new ArrayList<>();
+				quadrant.setStores(storeList);
 
 				System.out.println("Quadrant" + count + "--- ranges from "
 						+ startTopLeftLocation.toString() + " to "
@@ -98,10 +141,28 @@ public class QuadrantPosition {
 	 * @param stores
 	 * @param computedQuads
 	 */
-	private static void bucketStoresIntoQuadrants(List<Store> stores,
+	private static List<Quadrants> bucketStoresIntoQuadrants(List<Store> stores,
 			List<Quadrants> computedQuads) {
-		// TODO Auto-generated method stub
+		for(Store store:stores)
+		{
+			findPositionOfStore(store,computedQuads);
+		}
+		return computedQuads;
+	}
 
+	private static void findPositionOfStore(Store store,
+			List<Quadrants> computedQuads) {
+		for(Quadrants quad:computedQuads)
+		{
+			if(store.getLocation().getLatitude() <= quad.getLeftTopLocation().getLatitude() && 
+					store.getLocation().getLatitude() >= quad.getRightBottomLocation().getLatitude() &&
+					store.getLocation().getLongitude() >= quad.getLeftTopLocation().getLongitude() &&
+					store.getLocation().getLongitude() <= quad.getRightBottomLocation().getLongitude())
+			{
+				quad.getStores().add(store);
+				break;
+			}
+		}
 	}
 
 	/**
